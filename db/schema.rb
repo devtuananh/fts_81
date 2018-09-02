@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_16_045712) do
+ActiveRecord::Schema.define(version: 2018_09_16_164141) do
 
   create_table "courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 2018_09_16_045712) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_tasks_on_subject_id"
+  end
+
+  create_table "trainee_reports", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "report_id"
+    t.bigint "receiver_id"
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_trainee_reports_on_receiver_id"
+    t.index ["report_id", "receiver_id"], name: "index1", unique: true
+    t.index ["report_id"], name: "index_trainee_reports_on_report_id"
   end
 
   create_table "trainee_subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,6 +106,8 @@ ActiveRecord::Schema.define(version: 2018_09_16_045712) do
 
   add_foreign_key "subjects", "courses"
   add_foreign_key "tasks", "subjects"
+  add_foreign_key "trainee_reports", "reports"
+  add_foreign_key "trainee_reports", "users", column: "receiver_id"
   add_foreign_key "trainee_subjects", "subjects"
   add_foreign_key "trainee_tasks", "tasks"
   add_foreign_key "user_courses", "courses"

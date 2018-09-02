@@ -35,6 +35,7 @@ en:
       label_course: "Course"
       name_course: "Course example"
       short_description: "This course about...."
+      not_found: "User not found"
   trainee:
     users:
       show:
@@ -49,6 +50,22 @@ en:
       message:
         not_found_member: "Not found this member."
         not_found: "User not found!"
+    reports:
+      index:
+        daily_report: "Daily Report"
+        new_report: "New report"
+      new:
+        send: "Send"
+        title: "Title"
+        content: "Content"
+        receiver: "Receiver"
+        name: "Name"
+        phone: "Phone number"
+        trainers: "Trainers"
+        sum: "Sum"
+      create:
+        success: "Send report successfully!"
+        failure: "Send report failure!"
   shared:
     error_messages:
       form_error_warning:
@@ -199,3 +216,10 @@ en:
       finish:
         success: "Finish subject successfully!"
         failure: "Finish subject failure!"
+    reports:
+      index:
+        daily_report: "Daily report"
+        sender: "Name of sender"
+        title: "Title"
+        content: "Content report"
+        send_time: "Send time"
