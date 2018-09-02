@@ -4,4 +4,6 @@ class UserCourse < ApplicationRecord
 
   validates :user_id, presence: true
   validates :course_id, presence: true
+
+  enum status: {admin: 0, trainee_start: 1, trainee_complete: 2}
 end

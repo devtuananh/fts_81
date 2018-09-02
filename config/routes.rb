@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   end
   namespace :supervisor do
     resources :courses do
-      resources :subjects
+      resources :subjects do
+        patch "/finish", to: "subjects#finish"
+      end
+      patch "/finish", to: "courses#finish"
     end
     resources :users
     get "/supervisors", to: "users#all_supervisors"

@@ -119,6 +119,11 @@ en:
         edit_subject: "Edit subject"
         del_subject: "Delete subject"
         detail_subject: "Detail subject"
+        edit_subject: "Edit subject"
+        del_subject: "Delete subject"
+        detail_subject: "Detail subject"
+        finish_course: "Finish course"
+        finish_subject: "Finish subject"
       new:
         label: "Name"
         create: "Create"
@@ -133,8 +138,8 @@ en:
         content_task: "Content task"
         validate_time: "must be greater than the start time"
       create:
-        create_success: "Create successfully!"
-        create_fail: "Create failure"
+        success: "Create successfully!"
+        failure: "Create failure"
       subject_fields:
         confirm_delete: "Are you sure?"
         del_title: "Delete subject"
@@ -151,26 +156,32 @@ en:
       update:
       edit:
         edit: "Edit"
-        update_success: "Successfully updated course!"
-        update_fail: "Update course failure!"
+        success: "Successfully updated course!"
+        failure: "Update course failure!"
       destroy:
-        success: "Delete successfully"
+        success: "Delete successfully!"
         failure: "Delete course failure"
+      finish:
+        success: "Finish course successfully!"
+        failure: "Finish course failure!"
     subjects:
       new:
         create: "Create"
         not_found: "Course not found"
       create:
-        success: "Create subject successfully"
-        failure: "Create subject failure"
+        success: "Create subject successfully!"
+        failure: "Create subject failure!"
       task_fields:
         del_title: "Delete title"
-        failure: "Create subject failure"
+        failure: "Create subject failure!"
       edit:
         edit: "Edit"
       update:
-        success: "Update subject successfully"
-        failure: "Update subject failure"
+        success: "Update subject successfully!"
+        failure: "Update subject failure!"
       destroy:
-        success: "Delete subject successfully"
-        failure: "Delete subject failure"
+        success: "Delete subject successfully!"
+        failure: "Delete subject failure!"
+      finish:
+        success: "Finish subject successfully!"
+        failure: "Finish subject failure!"
