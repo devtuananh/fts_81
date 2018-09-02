@@ -7,6 +7,7 @@ gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.0.0"
 gem "bootstrap-kaminari-views"
+gem "bulk_insert"
 gem "cancancan", "~> 1.10"
 gem "coffee-rails", "~> 4.2"
 gem "config"

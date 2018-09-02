@@ -13,12 +13,7 @@
     <header><%= render "layouts/header" %></header>
     <section>
       <div class="col-md-6 flash">
-        <% if notice %>
-          <p class="alert alert-success"><%= notice %></p>
-        <% end %>
-        <% if alert %>
-          <p class="alert alert-danger"><%= alert %></p>
-        <% end %>
+        <%= render "shared/flash" %>
       </div>
       <%= yield %>
     </section>

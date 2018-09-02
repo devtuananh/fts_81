@@ -25,3 +25,15 @@ en:
       label_course: "Course"
       name_course: "Course example"
       short_description: "This course about...."
+  trainee:
+    users:
+      show:
+        profile: "Profile"
+        count: "5"
+        completed_course: "Courses completed"
+        quantity_subject: "Subjects"
+      all_users:
+        title: "All members"
+        view: "View"
+      message:
+        not_found: "User not found!"
