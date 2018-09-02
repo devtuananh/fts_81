@@ -110,6 +110,7 @@ en:
         subject: "Subject"
         edit: "Edit"
         delete: "Delete"
+        detail: "Detail"
         confirm: "Are you sure?"
       new:
         label: "Name"
@@ -143,3 +144,6 @@ en:
       update:
         update_success: "Successfully updated course!"
         update_fail: "Update course failure!"
+      destroy:
+        success: "Delete successfully"
+        failure: "Delete course fail"
