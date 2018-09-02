@@ -236,3 +236,44 @@ footer {
   color: $killarney;
   text-align: left;
 }
+
+label.required:after{
+  content: " *";
+  color: $red;
+}
+
+.submit-course {
+  margin: auto;
+  text-align: center;
+}
+
+.subjects, .course {
+  min-height: 20px;
+  background-color: $whiteSmoke;
+  box-shadow: rgba(0, 0, 0, 0.05) 0 1px 1px inset;
+  padding: 19px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: $gainsboro;
+  border-image: initial;
+  border-radius: 4px;
+  margin: 10px auto;
+}
+
+.subject {
+  border-bottom: 2px dashed $monochromatic;
+  margin-bottom: 10px;
+}
+
+.task {
+  width: 80%;
+  margin-left: auto;
+}
+
+.fa-trash {
+  color: $red;
+}
+
+.error {
+  margin: auto;
+}

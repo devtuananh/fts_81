@@ -1,5 +1,4 @@
 en:
-  name_app: "Fts81"
   base_title: "Framgia training system"
   layouts:
     header:
@@ -9,9 +8,12 @@ en:
       logout: "Log out"
       manage_user: "Manage Trainees"
       mycourse: "My courses"
-      catalog: "Catalog"
+      catalog: "All courses"
       profile: "Profile"
       change_profile: "Edit profile"
+      all_accounts: "List accounts"
+      all_members: "All members"
+      notification: "Notifications"
     footer:
       inc: "Framgia Inc."
       made_in: "Made by ... © 2018"
@@ -44,6 +46,8 @@ en:
         zero: "none"
         one: "The form contains 1 error"
         other: "The form contains %{count} errors"
+    error:
+      title: "Errors"
   supervisor:
     users:
       create:
@@ -85,4 +89,29 @@ en:
       show:
         trainee: "Trainee"
         supervisor: "Supervisor"
-
+    courses:
+      not_found_course: "Course not found!"
+      index:
+        add_course: "New course"
+      new:
+        label: "Name"
+        create: "Create"
+        description: "Description"
+        create_subject: "Create Subject"
+        create_course: "Create Course"
+        create_task: "Create Task"
+        add_subject: "Add subject"
+        add_task: "Add task"
+        subject: "Subject"
+        task: "Task"
+        content_task: "Content task"
+        validate_time: "must be greater than the start time"
+      create:
+        create_success: "Create successfully!"
+        create_fail: "Create failure"
+      subject_fields:
+        confirm_delete: "Are you sure?"
+        del_title: "Delete subject"
+      task_fields:
+        confirm_delete: "Are you sure?"
+        del_title: "Delete task"
