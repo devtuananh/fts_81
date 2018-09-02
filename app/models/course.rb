@@ -10,4 +10,5 @@ class Course < ApplicationRecord
   enum status: [:init, :start, :finish]
 
   accepts_nested_attributes_for :subjects, allow_destroy: true
+  scope :all_courses, ->{select(:id, :name, :start_time, :end_time).order created_at: :desc}
 end
