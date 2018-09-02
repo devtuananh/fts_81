@@ -1,0 +1,12 @@
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-md-6">
+      <p><%= @subject.name %></p>
+    </div>
+    <div class="col-md-6">
+      <% @subject.tasks.each_with_index do |task, index| %>
+        <p><%= task.name %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
