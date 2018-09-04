@@ -1,2 +1,11 @@
 en:
-  name_app: "Fts81"
+  layouts:
+    application:
+      name_app: "Framgia Training System"
+  shared:
+    navigation:
+      name_app: "Framgia Training System"
+      sign_up: "Sign Up"
+      change_profile: "Change Profile"
+      log_out: "Log out"
+      log_in: "Log In"
