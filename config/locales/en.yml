@@ -1,11 +1,27 @@
 en:
+  name_app: "Fts81"
+  base_title: "Framgia training system"
   layouts:
-    application:
-      name_app: "Framgia Training System"
-  shared:
-    navigation:
-      name_app: "Framgia Training System"
-      sign_up: "Sign Up"
-      change_profile: "Change Profile"
-      log_out: "Log out"
-      log_in: "Log In"
+    header:
+      logo: "Logo"
+      home: "Home"
+      login: "Log in"
+      logout: "Log out"
+      mycourse: "My courses"
+      catalog: "Catalog"
+      profile: "Profile"
+      change_profile: "Edit profile"
+    footer:
+      inc: "Framgia Inc."
+      made_in: "Made by ... © 2018"
+      located: "Handico - Pham Hung"
+  static_pages:
+    home:
+      home: "Home"
+      username: "Nguyen Van A"
+      birthday: "01/01/1990"
+      count: "5"
+      continue_learn: "Continue learning"
+      label_course: "Course"
+      name_course: "Course example"
+      short_description: "This course about...."
