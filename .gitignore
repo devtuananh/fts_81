@@ -26,6 +26,7 @@ config/master.key
 *.bowerrc
 bower.json
 
+/public/assets
 .powenv
 
 .byebug_history

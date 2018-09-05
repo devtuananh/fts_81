@@ -1,1 +1,3 @@
 per_page: 15
+pages:
+  per_user: 10
