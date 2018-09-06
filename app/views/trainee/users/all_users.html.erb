@@ -1,0 +1,19 @@
+<%= provide :title, t(".title") %>
+
+<h2 class="text-center"><%= t ".all_members" %></h2>
+<div class="content-wrapper">
+  <div class="row all-members">
+    <% @members.each do |member| %>
+      <div class="col-md-4 each-member">
+        <div class="avatar">
+          <img class="avatar" src="/assets/images/staff-02.jpg">
+        </div>
+        <div class="info-member">
+          <h3><%= member.name %></h3>
+          <p><%= member.email %></p>
+          <%= link_to t(".view"), trainee_user_path(member.id), class:"btn pull-left bt-view" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

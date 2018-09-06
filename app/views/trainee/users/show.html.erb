@@ -1,0 +1,29 @@
+<%= provide :title, @user.name %>
+
+<div class="profile">
+  <div class="content-wrapper container-profile">
+    <div class="info-profile">
+      <img class="avatar-profile" src="/assets/images/staff-02.jpg">
+      <div class="justify-content-center">
+        <h3><%= @user.name %></h3>
+        <p><%= @user.email %></p>
+        <p><%= @user.address %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-wrapper detail-profile">
+  <div class="profile-left">
+    <div class="course-completed">
+      <div class="count-course"><%= t ".count" %></div>
+      <div class="title-completed-course"><%= t ".completed_course" %></div>
+    </div>
+  </div>
+  <div class="profile-right">
+    <div class="count-subject-course">
+      <div class="quantity-subject"><%= t ".count" %></div>
+      <div class="title-subject"><%= t ".quantity_subject" %></div>
+    </div>
+  </div>
+</div>
