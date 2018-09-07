@@ -5,4 +5,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show]
     get "/members", to: "users#all_users"
   end
+  namespace :supervisor do
+    resources :users
+  end
 end
