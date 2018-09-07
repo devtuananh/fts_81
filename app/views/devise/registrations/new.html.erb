@@ -39,7 +39,7 @@
 
     <div class="field">
       <%= f.label :avatar %><br />
-      <%= f.file_field :avatar, autofocus: true, autocomplete: t(".avatar") %>
+      <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png", autofocus: true, autocomplete: t(".avatar") %>
     </div><br />
 
     <div class="actions">

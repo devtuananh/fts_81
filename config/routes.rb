@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   namespace :supervisor do
     resources :courses
     resources :users
+    get "/supervisors", to: "users#all_supervisors"
   end
 end

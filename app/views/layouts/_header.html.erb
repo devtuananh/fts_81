@@ -10,26 +10,30 @@
         </li>
         <% if user_signed_in? %>
           <% if current_user.supervisor? %>
-            <%= link_to trainee_members_path, class:"nav-link" do %>
-              <i class="fa fa-users" data-toogle="tooltip"
-                title="<%= t '.all_accounts' %>">
-              </i>
-            <% end %>
             <li class="nav-item mx-2">
-              <%= link_to t(".catalog"), supervisor_courses_path,class:"nav-link" %>
+              <%= link_to supervisor_users_path, class:"nav-link" do %>
+                <i class="fa fa-user"></i>&nbsp;<%= t ".manage_user" %>
+              <% end %>
+            </li>
+            <li class="nav-item mx-2">
+              <%= link_to supervisor_supervisors_path, class:"nav-link" do %>
+                <i class="fa fa-users"></i>&nbsp;<%= t ".supervisors" %>
+              <% end %>
+            </li>
+            <li class="nav-item mx-2">
+              <%= link_to supervisor_courses_path, class:"nav-link" do %>
+                <i class="fa fa-graduation-cap"></i>&nbsp;<%= t ".catalog" %>
+              <% end %>
             </li>
           <% else %>
             <li class="nav-item mx-2">
               <%= link_to t(".mycourse"), "#", class:"nav-link" %>
             </li>
             <%= link_to trainee_members_path, class:"nav-link" do %>
-              <i class="fa fa-users" data-toogle="tooltip"
-                title="<%= t '.all_members' %>" >
-              </i>
+              <i class="fa fa-users"></i>&nbsp;<%= t(".all_members") %>
             <% end %>
           <% end %>
         <% end %>
-
       </ul>
     </div>
     <div class="session_nav_content content-nav-right">
@@ -48,13 +52,16 @@
             <% end %>
           </li>
           <li class="nav-item dropdown">
-            <%= link_to "#", class:"nav-link dropdown-toggle", id:"navbardrop",
-              data:{toggle:"dropdown"} do %>
-              <%= image_tag "/assets/images/staff-02.jpg", class:"avatar_header", alt: "Avatar" %>
-            <% end %>
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              <%= image_tag get_avatar(current_user), class:"avatar_header", alt: t(".avatar") %>
+            </a>
             <div class="dropdown-menu">
-              <%= link_to trainee_user_path(current_user.id), class: "dropdown-item" do %>
-                <%= t ".profile" %>
+              <% if current_user.supervisor? %>
+                <%= link_to supervisor_user_path(current_user.id), class: "dropdown-item" do %><%= t ".profile" %>
+                <% end %>
+              <% else %>
+                <%= link_to trainee_user_path(current_user.id), class: "dropdown-item" do %><%= t ".profile" %>
+                <% end %>
               <% end %>
               <%= link_to t(".change_profile"), edit_user_registration_path, class:"dropdown-item" %>
               <%= link_to destroy_user_session_path, method: :delete, class:"dropdown-item" do %>

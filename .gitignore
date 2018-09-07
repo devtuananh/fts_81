@@ -26,9 +26,10 @@ config/master.key
 *.bowerrc
 bower.json
 
-/public/assets
+/app/assets/images/
+/public/uploads/
 .powenv
-
+/public/assets/
 .byebug_history
 
 node_modules/
