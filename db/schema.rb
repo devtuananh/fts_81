@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_021807) do
     t.text "description"
     t.datetime "start_time"
     t.datetime "end_time"
-    t.integer "status"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -82,7 +82,7 @@ ActiveRecord::Schema.define(version: 2018_09_03_021807) do
     t.string "avatar"
     t.string "phone"
     t.string "address"
-    t.integer "role", default: 0
+    t.integer "role", default: 0, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

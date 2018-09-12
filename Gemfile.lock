@@ -59,6 +59,11 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bootstrap-datepicker-rails (1.8.0.1)
+      railties (>= 3.0)
+    bootstrap-kaminari-views (0.0.5)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap4-kaminari-views (1.0.0)
       kaminari (>= 0.13)
       rails (>= 3.1)
@@ -79,6 +84,7 @@ GEM
     chromedriver-helper (1.2.0)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
+    cocoon (1.2.11)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -184,7 +190,7 @@ GEM
       fog-json (~> 1.0)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-brightbox (0.16.0)
+    fog-brightbox (0.16.1)
       dry-inflector
       fog-core
       fog-json
@@ -343,6 +349,8 @@ GEM
     mini_racer (0.2.0)
       libv8 (>= 6.3)
     minitest (5.11.3)
+    momentjs-rails (2.20.1)
+      railties (>= 3.1)
     msgpack (1.2.4)
     multi_json (1.13.1)
     mysql2 (0.5.2)
@@ -356,7 +364,7 @@ GEM
     parallel (1.12.1)
     parser (2.5.1.2)
       ast (~> 2.4.0)
-    pg (1.1.2)
+    pg (1.1.3)
     popper_js (1.14.3)
     powerpack (0.1.2)
     public_suffix (3.0.3)
@@ -451,6 +459,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    timeliness (0.3.8)
     trollop (2.9.9)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -460,6 +469,8 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.4.0)
+    validates_timeliness (5.0.0.alpha3)
+      timeliness (~> 0.3.8)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.7.0)
@@ -481,12 +492,15 @@ DEPENDENCIES
   bcrypt
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.0.0)
+  bootstrap-datepicker-rails
+  bootstrap-kaminari-views
   bootstrap4-kaminari-views
   bulk_insert
   byebug
   cancancan (~> 1.10)
   capybara (>= 2.15, < 4.0)
   chromedriver-helper
+  cocoon
   coffee-rails (~> 4.2)
   config
   devise
@@ -499,6 +513,7 @@ DEPENDENCIES
   listen (>= 3.0.5, < 3.2)
   mini_magick
   mini_racer
+  momentjs-rails
   mysql2
   pg
   puma (~> 3.11)
@@ -512,6 +527,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
   uglifier (>= 1.3.0)
+  validates_timeliness (~> 5.0.0.alpha3)
   web-console (>= 3.3.0)
 
 RUBY VERSION
