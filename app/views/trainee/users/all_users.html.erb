@@ -2,11 +2,12 @@
 
 <h2 class="text-center"><%= t ".all_members" %></h2>
 <div class="content-wrapper">
-  <div class="row all-members">
+  <%= paginate @members, theme: "twitter-bootstrap-4" %>
+  <div class="row all-member">
     <% @members.each do |member| %>
       <div class="col-md-4 each-member">
         <div class="avatar">
-          <img class="avatar" src="/assets/images/staff-02.jpg">
+          <%= image_tag get_avatar(member), class:"avatar" %>
         </div>
         <div class="info-member">
           <h3><%= member.name %></h3>

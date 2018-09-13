@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+  enum role: [:trainee, :supervisor]
+  mount_uploader :avatar, AvatarUploader
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
+   :validatable
+  has_many :user_courses
   has_many :trainee_subjects
   has_many :trainee_tasks
   has_many :reports
@@ -7,11 +12,6 @@ class User < ApplicationRecord
   has_many :monitoring_courses, through: :active_admin_courses,
            source: :monitoring_course
 
-  enum role: [:trainee, :supervisor]
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-   :validatable
-
   scope :by_lastest, ->{order created_at: :desc}
-  scope :accounts, ->{select(:id, :name, :email, :address, :phone)}
-  scope :members, ->{accounts.trainee}
+  scope :by_fields, ->{select :id, :name, :email, :address, :phone, :avatar, :role}
 end

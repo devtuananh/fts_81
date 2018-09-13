@@ -1,5 +1,9 @@
 en:
   base_title: "Framgia training system"
+  time:
+    formats:
+      own: "%H:%M:%S, %d-%m-%Y"
+      short: "%d/%m/%Y"
   layouts:
     header:
       logo: "Framgia Training System"
@@ -7,9 +11,13 @@ en:
       login: "Log in"
       logout: "Log out"
       manage_user: "Manage Trainees"
+      supervisors: "Supervisors"
       mycourse: "My courses"
       catalog: "All courses"
+      catalog: "Catalog"
+      all_members: "All members"
       profile: "Profile"
+      avatar: "Avatar"
       change_profile: "Edit profile"
       all_accounts: "List accounts"
       all_members: "All members"
@@ -37,8 +45,10 @@ en:
         quantity_subject: "Subjects"
       all_users:
         title: "All members"
+        all_users: "All members"
         view: "View"
       message:
+        not_found_member: "Not found this member."
         not_found: "User not found!"
   shared:
     error_messages:
@@ -55,6 +65,9 @@ en:
         add_fail: "Add new trainee error. Please recheck information!"
       update:
         success: "Update trainee information success"
+      destroy:
+        success: "Delete this trainee success"
+        warning: "Don't delete this trainee. Please recheck information!"
       check_supervisor:
         not_permission: "You not permission access page"
       load_user:
@@ -69,7 +82,7 @@ en:
         joined: "Joined Time"
         action: "Action"
         users: "Trainees"
-        create_trainee: "Create Trainee"
+        create_trainee: "New Trainee"
         not_permission: "You not permission access page"
       new:
         email: "email"
@@ -87,6 +100,7 @@ en:
       edit:
         edit_trainee: "Edit Trainee"
       show:
+        not_found_supervisor: "Not found this supervisor!"
         trainee: "Trainee"
         supervisor: "Supervisor"
     courses:
@@ -115,3 +129,8 @@ en:
       task_fields:
         confirm_delete: "Are you sure?"
         del_title: "Delete task"
+      all_supervisors:
+        not_permission: "You not permission access page"
+        title: "All supervisors"
+        all_supervisors: "All supervisors"
+        view: "View"

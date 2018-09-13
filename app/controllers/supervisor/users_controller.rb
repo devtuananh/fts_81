@@ -1,11 +1,12 @@
 class Supervisor::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :check_supervisor
-  before_action :load_user, except: %i(index new create)
+  before_action :load_user, only: %i(edit update destroy)
+  before_action :find_supervisor, only: :show
 
   def index
-    @users = User.trainee.by_lastest.page(params[:page]).per
-      Settings.pages.per_user
+    @users = User.trainee.by_lastest.page(params[:page])
+      .per Settings.pages.per_user
   end
 
   def new
@@ -16,7 +17,7 @@ class Supervisor::UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t ".add_success", name: @user.name
-      redirect_to supervisor_users_path
+      redirect_to supervisor_trainee_index_path
     else
       flash[:error] = t ".add_fail"
       render :new
@@ -41,7 +42,15 @@ class Supervisor::UsersController < ApplicationController
     redirect_to supervisor_users_path
   end
 
+  def all_supervisors
+    @supervisors = User.by_fields.supervisor.page(params[:page]).per Settings.per_page
+  end
+
   private
+
+  def user_params
+    params.require(:user).permit :name, :email, :password, :password_confirmation
+  end
 
   def load_user
     @user = User.find_by id: params[:id]
@@ -50,14 +59,12 @@ class Supervisor::UsersController < ApplicationController
     redirect_to supervisor_users_path
   end
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password,
-      :password_confirmation)
-  end
-
-  def check_supervisor
-    unless current_user.supervisor?
-      flash[:danger] = t ".not_permission"
+  def find_supervisor
+    @user = User.find_by_id params[:id]
+    if @user&.supervisor?
+      return @user
+    else
+      flash[:danger] = t ".not_found_supervisor"
       redirect_to root_path
     end
   end

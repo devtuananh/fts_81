@@ -6,7 +6,7 @@ class Ability
      if user.supervisor?
         can :manage, :all
      else
-      can :read, :all
+      can :read, User, id: user.id
       can :update, User, id: user.id
      end
   end

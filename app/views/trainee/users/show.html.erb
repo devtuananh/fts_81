@@ -3,7 +3,7 @@
 <div class="profile">
   <div class="content-wrapper container-profile">
     <div class="info-profile">
-      <img class="avatar-profile" src="/assets/images/staff-02.jpg">
+      <%= image_tag get_avatar(@user), class:"avatar-profile" %>
       <div class="justify-content-center">
         <h3><%= @user.name %></h3>
         <p><%= @user.email %></p>
