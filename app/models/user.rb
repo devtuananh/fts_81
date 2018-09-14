@@ -3,7 +3,6 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
    :validatable
-  has_many :user_courses
   has_many :trainee_subjects
   has_many :trainee_tasks
   has_many :reports
@@ -14,4 +13,6 @@ class User < ApplicationRecord
 
   scope :by_lastest, ->{order created_at: :desc}
   scope :by_fields, ->{select :id, :name, :email, :address, :phone, :avatar, :role}
+  scope :accounts, ->{select(:id, :name, :email, :address, :phone)}
+  scope :members, ->{accounts.trainee}
 end

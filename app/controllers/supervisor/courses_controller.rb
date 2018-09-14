@@ -1,5 +1,5 @@
 class Supervisor::CoursesController < ApplicationController
-  before_action :find_course, only: [:show, :edit, :update]
+  before_action :find_course, except: [:index, :new]
 
   def index
     @courses = Course.all_courses.page(params[:page]).per Settings.per_page
@@ -35,11 +35,20 @@ class Supervisor::CoursesController < ApplicationController
   def update
     if @course.update_attributes course_params
       flash[:success] = t ".update_success"
-      redirect_to supervisor_courses_path
+      redirect_to supervisor_course_path
     else
       flash[:danger] = t ".update_fail"
       render :edit
     end
+  end
+
+  def destroy
+    if @course.destroy
+      flash[:success] = t ".success"
+    else
+      flash[:danger] = t ".failure"
+    end
+    redirect_to supervisor_courses_path
   end
 
   private
