@@ -14,7 +14,6 @@ en:
       supervisors: "Supervisors"
       mycourse: "My courses"
       catalog: "All courses"
-      catalog: "Catalog"
       all_members: "All members"
       profile: "Profile"
       avatar: "Avatar"
@@ -107,6 +106,11 @@ en:
       not_found_course: "Course not found!"
       index:
         add_course: "New course"
+        course: "Course"
+        subject: "Subject"
+        edit: "Edit"
+        delete: "Delete"
+        confirm: "Are you sure?"
       new:
         label: "Name"
         create: "Create"
@@ -134,3 +138,8 @@ en:
         title: "All supervisors"
         all_supervisors: "All supervisors"
         view: "View"
+      edit:
+        edit: "Edit"
+      update:
+        update_success: "Successfully updated course!"
+        update_fail: "Update course failure!"
