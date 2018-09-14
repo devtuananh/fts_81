@@ -64,7 +64,7 @@ class Supervisor::CoursesController < ApplicationController
   def course_params
     params.require(:course).permit :id, :name, :description, :start_time, :end_time,
       :status, subjects_attributes: [:id, :name, :description, :start_time,
-      :end_time, :destroy, tasks_attributes: [:id, :name, :description, :content,
-      :destroy]]
+      :end_time, :destroy, tasks_attributes: [:id, :name, :description,
+      :content, :destroy]]
   end
 end

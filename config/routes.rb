@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     get "/members", to: "users#all_users"
   end
   namespace :supervisor do
-    resources :courses
+    resources :courses do
+      resources :subjects
+    end
     resources :users
     get "/supervisors", to: "users#all_supervisors"
   end

@@ -14,7 +14,6 @@ en:
       supervisors: "Supervisors"
       mycourse: "My courses"
       catalog: "All courses"
-      all_members: "All members"
       profile: "Profile"
       avatar: "Avatar"
       change_profile: "Edit profile"
@@ -112,6 +111,7 @@ en:
         delete: "Delete"
         detail: "Detail"
         confirm: "Are you sure?"
+        add_a_subject: "A new subject"
       new:
         label: "Name"
         create: "Create"
@@ -142,8 +142,19 @@ en:
       edit:
         edit: "Edit"
       update:
+      edit:
+        edit: "Edit"
         update_success: "Successfully updated course!"
         update_fail: "Update course failure!"
       destroy:
         success: "Delete successfully"
         failure: "Delete course fail"
+    subjects:
+      new:
+        create: "Create"
+        not_found: "Course not found"
+      create:
+        success: "Create subject successfully"
+        fail: "Create subject fail"
+      task_fields:
+        del_title: "Delete title"
