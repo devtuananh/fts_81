@@ -24,6 +24,21 @@
           <td>
             <% course.subjects.each_with_index do |subject, index| %>
               <%= index + 1 %>:&nbsp;<%= subject.name %><br>
+                <p>
+                  <%= link_to edit_supervisor_course_subject_path(course, subject) do %>
+                    <i class="fa fa-edit" data-toogle="tooltip"
+                      title="<%= t '.edit_subject' %>"></i>&nbsp;
+                  <% end %>
+                  <%= link_to supervisor_course_subject_path(course, subject),
+                    data: {confirm: t(".confirm")}, method: :delete do %>
+                    <i class="fa fa-trash" data-toogle="tooltip"
+                      title="<%= t '.del_subject' %>"></i>&nbsp;
+                  <% end %>
+                  <%= link_to supervisor_course_subject_path(course, subject) do %>
+                    <i class="fa fa-leanpub" data-toogle="tooltip"
+                      title="<%= t '.detail_subject' %>"></i>
+                  <% end %>
+                </p>
             <% end %>
             <%= link_to new_supervisor_course_subject_path(course),
               class:"badge badge-pill badge-info" do %>
@@ -33,7 +48,7 @@
           <td>
             <%= link_to supervisor_course_path(course.id) do %>
               <i class="fa fa-book" data-toogle="tooltip"
-                title="<%= t ('.detail') %>"></i>
+                title="<%= t '.detail' %>"></i>
             <% end %>
           </td>
           <td>

@@ -20,6 +20,7 @@ en:
       all_accounts: "List accounts"
       all_members: "All members"
       notification: "Notifications"
+      daily_report: "Daily report"
     footer:
       inc: "Framgia Inc."
       made_in: "Made by ... © 2018"
@@ -112,6 +113,12 @@ en:
         detail: "Detail"
         confirm: "Are you sure?"
         add_a_subject: "A new subject"
+        detail: "Detail"
+        confirm: "Are you sure?"
+        add_a_subject: "A new subject"
+        edit_subject: "Edit subject"
+        del_subject: "Delete subject"
+        detail_subject: "Detail subject"
       new:
         label: "Name"
         create: "Create"
@@ -148,13 +155,22 @@ en:
         update_fail: "Update course failure!"
       destroy:
         success: "Delete successfully"
-        failure: "Delete course fail"
+        failure: "Delete course failure"
     subjects:
       new:
         create: "Create"
         not_found: "Course not found"
       create:
         success: "Create subject successfully"
-        fail: "Create subject fail"
+        failure: "Create subject failure"
       task_fields:
         del_title: "Delete title"
+        failure: "Create subject failure"
+      edit:
+        edit: "Edit"
+      update:
+        success: "Update subject successfully"
+        failure: "Update subject failure"
+      destroy:
+        success: "Delete subject successfully"
+        failure: "Delete subject failure"
