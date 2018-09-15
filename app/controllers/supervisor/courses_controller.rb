@@ -1,4 +1,6 @@
 class Supervisor::CoursesController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_supervisor
   before_action :find_course, except: [:index, :new, :finish]
 
   def index
@@ -29,7 +31,10 @@ class Supervisor::CoursesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @trainees = @course.users.trainee
+    @supervisors = @course.users.supervisor
+  end
 
   def edit; end
 
