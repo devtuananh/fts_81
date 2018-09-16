@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum role: [:trainee, :supervisor]
+  enum role: {trainee: 0, supervisor: 1}
   mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable, :recoverable, :rememberable,
    :validatable

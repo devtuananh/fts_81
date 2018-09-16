@@ -1,6 +1,6 @@
 class Supervisor::SubjectsController < ApplicationController
   before_action :find_course
-  before_action :find_subject, except: [:new, :create]
+  before_action :find_subject, except: [:new, :create, :finish]
 
   def new
     @subject = @course.subjects.build
@@ -21,6 +21,8 @@ class Supervisor::SubjectsController < ApplicationController
 
   def show; end
 
+  def edit; end
+
   def update
     if @subject.update_attributes subject_params
       flash[:success] = t ".success"
@@ -39,11 +41,22 @@ class Supervisor::SubjectsController < ApplicationController
     redirect_to supervisor_courses_path
   end
 
+  def finish
+    @subject = Subject.find_by_id params[:subject_id]
+
+    if @subject.update_attributes status: :finish
+      flash[:success] = t ".success"
+    else
+      flash[:danger] = t ".failure"
+    end
+    redirect_to supervisor_courses_path
+  end
+
   private
 
   def subject_params
     params.require(:subject).permit :name, :description, :start_time,
-      :end_time, tasks_attributes: [:id, :name, :description,
+      :end_time, :status, tasks_attributes: [:id, :name, :description,
       :content, :destroy]
   end
 
