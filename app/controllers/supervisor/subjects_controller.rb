@@ -1,4 +1,6 @@
 class Supervisor::SubjectsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :check_supervisor
   before_action :find_course
   before_action :find_subject, except: [:new, :create, :finish]
 

@@ -102,9 +102,14 @@ en:
         not_found_supervisor: "Not found this supervisor!"
         trainee: "Trainee"
         supervisor: "Supervisor"
+      all_supervisors:
+        not_permission: "You not permission access page"
+        title: "All supervisors"
+        view: "View"
     courses:
       not_found_course: "Course not found!"
       index:
+        title: "Manage Courses"
         add_course: "New course"
         course: "Course"
         subject: "Subject"
@@ -146,14 +151,6 @@ en:
       task_fields:
         confirm_delete: "Are you sure?"
         del_title: "Delete task"
-      all_supervisors:
-        not_permission: "You not permission access page"
-        title: "All supervisors"
-        all_supervisors: "All supervisors"
-        view: "View"
-      edit:
-        edit: "Edit"
-      update:
       edit:
         edit: "Edit"
         success: "Successfully updated course!"
