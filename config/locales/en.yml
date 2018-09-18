@@ -189,6 +189,9 @@ en:
       button:
         remove_user:
           btn_submit: "Remove"
+          confirm_delete: "Are you sure remove this user from course?"
+        add_user:
+          failed: "Add User Fail"
       destroy:
         success: "Delete successfully!"
         failure: "Delete course failure"
@@ -223,3 +226,10 @@ en:
         title: "Title"
         content: "Content report"
         send_time: "Send time"
+  mailer:
+    welcome: "Hi %{name}"
+    thanks: "Thanks for joining this course !"
+    horizontal: "---------------------------------------------"
+    sorry: "See you again"
+    assign_to_course: "You has been assigned to a course: %{name}"
+    remove_from_course: "You has been removed from a course: %{name}"

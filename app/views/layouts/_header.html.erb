@@ -10,10 +10,6 @@
         </li>
         <% if user_signed_in? %>
           <% if current_user.supervisor? %>
-            <%= link_to trainee_members_path, class:"nav-link" do %>
-              <i class="fa fa-users" data-toogle="tooltip" title="List accounts">
-              </i>
-            <% end %>
             <li class="nav-item mx-2">
               <%= link_to supervisor_users_path, class:"nav-link" do %>
                 <i class="fa fa-user"></i>&nbsp;<%= t ".manage_user" %>
@@ -48,7 +44,6 @@
             </li>
           <% end %>
         <% end %>
-
       </ul>
     </div>
     <div class="session_nav_content content-nav-right">
@@ -70,7 +65,7 @@
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
               <%= image_tag get_avatar(current_user), class:"avatar_header", alt: t(".avatar") %>
             </a>
-            <div class="dropdown-menu">
+            <div class="dropdown-menu dropdown-menu-right">
               <% if current_user.supervisor? %>
                 <%= link_to supervisor_user_path(current_user.id), class: "dropdown-item" do %><%= t ".profile" %>
                 <% end %>

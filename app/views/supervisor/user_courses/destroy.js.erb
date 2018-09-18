@@ -1,5 +1,5 @@
 if(<%= @user.supervisor? %>){
-  $('#edit_user_course_<%= @user_course_id %>').parent().html('<%= j(render(partial: 'supervisor/courses/button/add_supervisor', locals: {course: @user_course.course,supervisor: @user_course.user})) %>');
+  $('#edit_user_course_<%= @user_course_id %>').parent().html('<%= j(render(partial: 'supervisor/courses/button/add_supervisor', locals: {course: @user_course.course, supervisor: @user_course.user})) %>');
 }
 else{
   $('#edit_user_course_<%= @user_course_id %>').parent().html('<%= j(render(partial: 'supervisor/courses/button/add_trainee', locals: {course: @user_course.course, trainee: @user_course.user})) %>');

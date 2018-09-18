@@ -4,7 +4,7 @@
 
     <%= devise_error_messages! %>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :email %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: t(".email") %>
     </div>
@@ -13,7 +13,7 @@
       <div><%= t ".waiting", email: resource.unconfirmed_email %></div>
     <% end %>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :password %> <i><%= t(".password_warning")%></i><br />
       <%= f.password_field :password, autocomplete: t(".new-password") %>
       <% if @minimum_password_length %>
@@ -22,39 +22,39 @@
       <% end %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :password_confirmation %><br />
       <%= f.password_field :password_confirmation, autocomplete: t(".new-password") %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :current_password %> <i><%= t ".confirm_current_password" %></i><br />
       <%= f.password_field :current_password, autocomplete: t(".current-password") %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :name %><br />
       <%= f.text_field :name, autofocus: true, autocomplete: t(".name") %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :phone %><br />
       <%= f.text_field :phone, autofocus: true, autocomplete: t(".phone") %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :address %><br />
       <%= f.text_field :address, autofocus: true, autocomplete: t(".address") %>
     </div>
 
-    <div class="field">
+    <div class="field form-group">
       <%= f.label :avatar %><br />
       <%= f.file_field :avatar, accept: "image/jpeg,image/gif,image/png", autofocus: true %>
-    </div><br />
+    </div>
 
-    <div class="actions">
-      <%= f.submit t(".update") %>
+    <div class="actions form-group">
+      <%= f.submit t(".update"), class:"btn btn-success" %>
     </div>
   <% end %>
-  <%= link_to t(".back"), :back %>
+  <%= link_to t(".back"), :back, class:"btn btn-primary" %>
 </div>
