@@ -5,7 +5,7 @@ pages:
   per: 10
 course_times: 2
 task_times: 2
-default_image: "/assets/training.png"
+default_image: "/assets/images/training.png"
 format_time: "%d/%m/%Y"
 batch_job:
   assign_to_course: 1
