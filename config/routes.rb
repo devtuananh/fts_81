@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     end
     resources :users
     get "/supervisors", to: "users#all_supervisors"
+    resources :user_courses, only: %i(create update destroy)
   end
 end

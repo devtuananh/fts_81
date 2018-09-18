@@ -36,7 +36,9 @@ class Supervisor::CoursesController < ApplicationController
     @supervisors = @course.users.supervisor
   end
 
-  def edit; end
+  def edit
+    load_all_users
+  end
 
   def update
     if @course.update_attributes course_params
@@ -69,6 +71,11 @@ class Supervisor::CoursesController < ApplicationController
   end
 
   private
+
+  def load_all_users
+    @supervisors = User.supervisor.page(params[:page]).per Settings.pages.per
+    @trainees = User.trainee.page(params[:page]).per Settings.pages.per
+  end
 
   def find_course
     @course = Course.find_by_id params[:id]

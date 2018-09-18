@@ -155,6 +155,23 @@ en:
         edit: "Edit"
         success: "Successfully updated course!"
         failure: "Update course failure!"
+        supervisors: "Supervisors"
+        trainees: "Trainees"
+        name: "Name"
+        email: "Email"
+        option: "Action"
+        not_found: "Not found this course"
+      update:
+        update_success: "Successfully updated course!"
+        update_fail: "Update course failure!"
+      destroy:
+        success: "Delete successfully"
+        failure: "Delete course fail"
+      add_user:
+        btn_submit: "Assign"
+      button:
+        remove_user:
+          btn_submit: "Remove"
       destroy:
         success: "Delete successfully!"
         failure: "Delete course failure"
