@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   namespace :trainee do
     resources :users, only: [:show]
     get "/members", to: "users#all_users"
+    resources :reports, only: [:index, :new, :create]
   end
   namespace :supervisor do
     resources :courses do

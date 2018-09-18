@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="content-wrapper content-nav">
+  <div class="content-nav">
     <%= link_to t(".logo"), root_path, class:"navbar-brand" %>
     <div class="session_nav_content content-nav-left" id="navbarNav">
       <ul class="navbar-nav">
@@ -29,13 +29,23 @@
                 <i class="fa fa-graduation-cap"></i>&nbsp;<%= t ".catalog" %>
               <% end %>
             </li>
+            <li class="nav-item mx-2">
+              <%= link_to supervisor_reports_path, class:"nav-link" do %>
+              <i class="fa fa-list-alt"></i>&nbsp;<%= t ".daily_report" %>
+              <% end %>
+            </li>
           <% else %>
             <li class="nav-item mx-2">
               <%= link_to t(".mycourse"), "#", class:"nav-link" %>
             </li>
             <%= link_to trainee_members_path, class:"nav-link" do %>
-              <i class="fa fa-users"></i>&nbsp;<%= t(".all_members") %>
+              <i class="fa fa-users"></i>&nbsp;<%= t ".all_members" %>
             <% end %>
+            <li class="nav-item mx-2">
+              <%= link_to trainee_reports_path, class:"nav-link" do %>
+              <i class="fa fa-list-alt"></i>&nbsp;<%= t ".daily_report" %>
+              <% end %>
+            </li>
           <% end %>
         <% end %>
 
