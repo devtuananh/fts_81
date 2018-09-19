@@ -1,39 +1,44 @@
 <%= provide :title, t(".home") %>
-
-<div class="member">
-  <div class="content-wrapper container-member">
-    <img class="img-course" src="/assets/course.svg">
-    <div class="left-info-member">
-      <div>
-        <% if user_signed_in? %>
-          <div class="avt">
-            <%= image_tag get_avatar(current_user), class:"avatar" %>
+<% if current_user.trainee? %>
+  <div class="member">
+    <div class="content-wrapper container-member">
+      <img class="img-course" src="/assets/images/course.svg">
+      <div class="left-info-member">
+        <div>
+          <% if user_signed_in? %>
+            <div class="avt">
+              <%= image_tag get_avatar(current_user), class:"avatar" %>
+            </div>
+          <% end %>
+          <div class="detail-user">
+            <div class="username"><%= current_user.name %></div>
+            <div class="email"><%= current_user.email %></div>
           </div>
-        <% end %>
-        <div class="detail-user">
-          <div class="username"><%= t ".username" %></div>
-          <div class="birthday"><%= t ".birthday" %></div>
+        </div>
+      </div>
+      <div class="right-info-member">
+        <div class="count-course">
+          <div class="count"><%= @my_courses.length %></div>
+          <div class="lable-course"><%= t ".label_course" %></div>
         </div>
       </div>
     </div>
-    <div class="right-info-member">
-      <div class="count-course">
-        <div class="count"><%= t ".count" %></div>
-        <div class="lable-course"><%= t ".label_course" %></div>
-      </div>
-    </div>
   </div>
-</div>
-<div class="row content-wrapper" id="info-course">
-  <div class="col-md-4">
-    <a class="topLine" href="#">
-      <div class="card">
-        <div class="topBar"></div>
-        <div class="card-body">
-          <h3 class="title-course"><%= t ".name_course" %></h3>
-          <span class="short-description"><%= t ".short-description" %></span>
+  <div class="row content-wrapper" id="info-course">
+    <% @my_courses.each do |my_course| %>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="topBar"></div>
+          <div class="card-body">
+            <h3 class="title-course"><%= my_course.name %></h3>
+            <span class="short-description"><%= my_course.description %></span>
+          </div>
+          <div class="card-footer">
+            <%= link_to t(".learn"), trainee_learn_path(my_course.id), class:"btn btn-success", target: "_blank" %>
+          </div>
         </div>
       </div>
-    </a>
+    <% end %>
   </div>
-</div>
+<% else %>
+<% end %>

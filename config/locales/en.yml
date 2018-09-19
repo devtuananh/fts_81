@@ -36,6 +36,9 @@ en:
       name_course: "Course example"
       short_description: "This course about...."
       not_found: "User not found"
+      subject_not_found: "Subject not found!"
+      task_not_found: "Task not found!"
+      learn: "Learn"
   trainee:
     users:
       show:
@@ -66,6 +69,8 @@ en:
       create:
         success: "Send report successfully!"
         failure: "Send report failure!"
+    learns:
+      learn: "Learn"
   shared:
     error_messages:
       form_error_warning:

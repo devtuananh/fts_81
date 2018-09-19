@@ -7,7 +7,20 @@ class Supervisor::UserCoursesController < ApplicationController
   def create
     if @course.assign_user @user
       TrainingMailer.assign_to_course(@user, @course).deliver_later
-      @user_course = @user.user_courses.find_by course_id: @course.id
+      @user_course = @user.user_courses.find_by(course_id: @course.id)
+      @course = Course.find_by_id @course.id
+      if @user.trainee?
+        TraineeSubject.bulk_insert(ignore: true) do |worker_subject|
+          @course.subjects.each do |subject|
+            worker_subject.add({trainee_id: @user.id, subject_id: subject.id})
+            TraineeTask.bulk_insert(ignore: true) do |work_task|
+              subject.tasks.each do |task|
+                work_task.add({trainee_id: @user.id, task_id: task.id})
+              end
+            end
+          end
+        end
+      end
       respond_to do |format|
         format.html{redirect_to edit_supervisor_course_path(@course)}
         format.js
