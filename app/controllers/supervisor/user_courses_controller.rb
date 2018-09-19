@@ -1,18 +1,19 @@
 class Supervisor::UserCoursesController < ApplicationController
-  before_action :check_params, only: %i(create)
   before_action :authenticate_user!
   before_action :check_supervisor
+  before_action :check_params, only: %i(create)
   before_action :set_user_course, only: %i(destroy)
 
   def create
     if @course.assign_user @user
-      @user_course = @user.user_courses.find_by(course_id: @course.id)
+      TrainingMailer.assign_to_course(@user, @course).deliver_later
+      @user_course = @user.user_courses.find_by course_id: @course.id
       respond_to do |format|
         format.html{redirect_to edit_supervisor_course_path(@course)}
         format.js
       end
     else
-      flash[:danger] = t "supervisor.courses.button.add_trainer.failed"
+      flash[:danger] = t "supervisor.courses.button.add_user.failed"
       redirect_to :back
     end
   end
@@ -22,6 +23,7 @@ class Supervisor::UserCoursesController < ApplicationController
     @user = @user_course.user
     @user_course_id = @user_course.id
     if @course.remove_user @user
+      TrainingMailer.remove_from_course(@user, @course).deliver_later
       remove_sucess
     else
       flash[:danger] = t "supervisor.courses.button.remove_user.failed"
@@ -32,7 +34,7 @@ class Supervisor::UserCoursesController < ApplicationController
   private
 
   def remove_sucess
-    @user_course = @course.user_courses.build(user_id: @user.id)
+    @user_course = @course.user_courses.build user_id: @user.id
     respond_to do |format|
       format.html{redirect_to edit_supervisor_course_path(@course)}
       format.js

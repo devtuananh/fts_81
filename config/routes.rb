@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  require "sidekiq/web"
   root "static_pages#home"
   devise_for :users
   namespace :trainee do
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
       patch "/finish", to: "courses#finish"
     end
     resources :users
+    mount Sidekiq::Web => "/sidekiq"
+    resources :reports, only: :index
     get "/supervisors", to: "users#all_supervisors"
     resources :user_courses, only: %i(create update destroy)
   end

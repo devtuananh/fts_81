@@ -21,7 +21,7 @@
           <td><%= index + 1 %></td>
           <td>
             <p><%= course.name %><p>
-            <p><%= course.start_time %> - <%= course.end_time %></p>
+            <p><%= training_time(course) %></p>
             <% unless course.finish? %>
               <div class="pull-left">
                 <%= link_to t(".finish_course"), supervisor_course_finish_path(course), class: "badge badge-pill badge-danger", data: {confirm: t(".confirm")}, method: :patch %>
