@@ -71,6 +71,14 @@ en:
         failure: "Send report failure!"
     learns:
       learn: "Learn"
+    courses:
+      index:
+        my_courses: "My Courses"
+        course: "Courses"
+        subject: "Subjects"
+        members: "Members"
+      show_member:
+        title: "Members of course"
   shared:
     error_messages:
       form_error_warning:

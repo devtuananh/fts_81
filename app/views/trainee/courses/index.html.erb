@@ -5,7 +5,7 @@
       <tr>
         <th><%= t ".course" %></th>
         <th><%= t ".subjects" %></th>
-        <th><%= t ".supervisors" %></th>
+        <th><%= t ".members" %></th>
         <th><%= t ".view_progress" %></th>
       </tr>
     </thead>
@@ -20,11 +20,7 @@
           </td>
           <td>
             <ul>
-              <% mycourse.users.each_with_index do |supervisor, index| %>
-                <% if supervisor.supervisor? %>
-                  <li><%= supervisor.name%></li>
-                <% end %>
-              <% end %>
+            <%= link_to t(".all member"), trainee_path(mycourse.id), class: "btn btn-info" %>
             </ul>
           </td>
           <td>

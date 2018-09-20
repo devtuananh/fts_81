@@ -17,14 +17,16 @@ class Supervisor::UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       flash[:success] = t ".add_success", name: @user.name
-      redirect_to supervisor_trainee_index_path
+      redirect_to supervisor_trainee_path
     else
       flash[:error] = t ".add_fail"
       render :new
     end
   end
 
-  def show; end
+  def show
+    @courses = @user.courses
+  end
 
   def update
     if @user.update_attributes user_params

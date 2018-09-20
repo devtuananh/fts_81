@@ -22,7 +22,7 @@
             <td><%= report.description %></td>
             <td>
               <% report.trainee_reports.each_with_index do |trainee_report, index| %>
-                <%= index + 1 %>:&nbsp;<%= get_user(trainee_report.receiver_id).name %>
+                <%= index + 1 %>:&nbsp;<%= trainee_report.user.name %>
                 <br>
               <% end %>
             </td>
