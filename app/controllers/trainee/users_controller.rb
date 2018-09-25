@@ -2,7 +2,9 @@ class Trainee::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :find_user, only: :show
 
-  def show; end
+  def show
+    @my_courses = @user.courses.page(params[:page]).per Settings.per_page
+  end
 
   def all_users
     @members = User.by_fields.trainee.page(params[:page]).per Settings.per_page

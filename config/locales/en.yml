@@ -246,3 +246,5 @@ en:
     sorry: "See you again"
     assign_to_course: "You has been assigned to a course: %{name}"
     remove_from_course: "You has been removed from a course: %{name}"
+    hi: "Hi %{name}, this is statistic of trainee"
+    mothly_report: "Monthly report"

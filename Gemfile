@@ -7,13 +7,13 @@ gem "bcrypt"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "bootstrap", "~> 4.0.0"
 gem "bootstrap-datepicker-rails"
-gem "bulk_insert"
 gem "bootstrap4-kaminari-views"
+gem "bulk_insert"
 gem "cancancan", "~> 1.10"
 gem "carrierwave", "1.2.2"
+gem "cocoon"
 gem "coffee-rails", "~> 4.2"
 gem "config"
-gem "cocoon"
 gem "devise"
 gem "faker"
 gem "font-awesome-rails"
@@ -32,6 +32,7 @@ gem "sass-rails", "~> 5.0"
 gem "sidekiq"
 gem "uglifier", ">= 1.3.0"
 gem "validates_timeliness", "~> 5.0.0.alpha3"
+gem "whenever", :require => false
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
