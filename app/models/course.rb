@@ -12,7 +12,7 @@ class Course < ApplicationRecord
   enum status: {init: 0, start: 1, finish: 2}
 
   accepts_nested_attributes_for :subjects, allow_destroy: true
-  scope :all_courses, ->{select(:id, :name, :status, :start_time, :end_time).order created_at: :desc}
+  scope :all_courses, ->{select(:id, :name, :description, :status, :start_time, :end_time).order created_at: :desc}
 
   scope :trainee_courses, ->(id){joins(:user_courses).select(:id, :name, :description, :start_time, :end_time, :status, "user_courses.user_id as user_id, user_courses.course_id as course_id").where(user_courses: {user_id: id, status: [:trainee_start, :trainee_complete]})}
 

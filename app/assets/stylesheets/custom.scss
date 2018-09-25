@@ -334,3 +334,27 @@ h3 {
 .status {
   color: $neonBlue;
 }
+
+#form_subject, #form_task {
+  margin: auto;
+}
+
+h3, h4 {
+  text-align: center;
+}
+
+.all-member {
+  border-left: 4px solid $springRain;
+}
+
+#supervisor-edit-trainee, #edit-profile {
+  margin: auto;
+}
+
+.progress-bar {
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+.progress-bar {
+  background-color: #20c997;
+}

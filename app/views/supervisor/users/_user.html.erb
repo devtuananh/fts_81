@@ -1,12 +1,12 @@
-<tr class="d-flex">
-  <td class="col-2"><%= link_to user.name, trainee_user_path(user),
+<tr>
+  <td><%= link_to user.name, trainee_user_path(user),
     class: "text-dark" %></td>
-  <td class="col-2"><%= user.email %></td>
-  <td class="col-2 text-center"><%= user.address %></td>
-  <td class="col-2 text-center"><i class="fa fa-phone" ></i>&nbsp;<%= user.phone %></td>
-  <td class="col-2 text-center"><%= user.created_at.strftime("%d-%m-%Y") %></td>
+  <td><p><%= user.email %></p></td>
+  <td><p><%= user.address %></p></td>
+  <td><i class="fa fa-phone" ></i>&nbsp;<%= user.phone %></td>
+  <td><%= user.created_at.strftime("%d-%m-%Y") %></td>
     <% if current_user.supervisor? %>
-    <td class="col-2 text-center">
+    <td>
       <%= link_to supervisor_user_path(user), method: :delete,
         data: {confirm: t(".confirm")} do %>
         <i class="fa fa-trash-o"></i>&nbsp;<%= t(".delete") %>

@@ -18,7 +18,7 @@
               <li>
                 <strong><%= task.name %></strong>
                 <br>
-                <%= link_to t(".learn"), "#", class:"btn btn-success" %>
+                <%= link_to t(".learn"), trainee_task_path(task.id), class:"btn btn-success" %>
               </li>
             <% end %>
           </ol>

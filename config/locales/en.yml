@@ -79,6 +79,15 @@ en:
         members: "Members"
       show_member:
         title: "Members of course"
+      show:
+        description: "Description"
+        time: "Time"
+    tasks:
+      update:
+        finish: "Finish task"
+        task: "Task"
+        success: "Finish task successfully"
+        failure: "Finish task failure"
   shared:
     error_messages:
       form_error_warning:
@@ -192,8 +201,8 @@ en:
         option: "Action"
         not_found: "Not found this course"
       update:
-        update_success: "Successfully updated course!"
-        update_fail: "Update course failure!"
+        success: "Successfully updated course!"
+        failure: "Update course failure!"
       destroy:
         success: "Delete successfully"
         failure: "Delete course fail"
@@ -211,6 +220,8 @@ en:
       finish:
         success: "Finish course successfully!"
         failure: "Finish course failure!"
+      show:
+        course_detail: "Course detail"
     subjects:
       new:
         create: "Create"
@@ -232,6 +243,16 @@ en:
       finish:
         success: "Finish subject successfully!"
         failure: "Finish subject failure!"
+      subject_fields:
+        confirm_delete: "Are you sure?"
+        del_title: "Delete subject"
+      task_fields:
+        confirm_delete: "Are you sure?"
+        del_title: "Delete task"
+      show:
+        subject_detail: "Subject detail"
+        subject: "Subject"
+        task: "Task"
     reports:
       index:
         daily_report: "Daily report"
