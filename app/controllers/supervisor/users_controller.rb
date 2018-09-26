@@ -25,7 +25,7 @@ class Supervisor::UsersController < ApplicationController
   end
 
   def show
-    @courses = @user.courses
+    @courses = @user.courses.page(params[:page]).per Settings.per_page
   end
 
   def update
