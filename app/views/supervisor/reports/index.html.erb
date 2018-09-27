@@ -12,7 +12,7 @@
     <tbody>
       <% @list_reports.each do |report| %>
         <tr>
-          <td><%= get_user(report.sender_id).name %></td>
+          <td><%= find_user(report.sender_id).name %></td>
           <td><%= report.title %></td>
           <td><%= report.description %></td>
           <td><%= report.created_at.strftime(Settings.format_time) %></td>

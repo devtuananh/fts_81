@@ -2,7 +2,7 @@ class Trainee::ReportsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @list_reports = Report.trainee_reports current_user.id
+    @list_reports = Report.trainee_reports(current_user.id).page(params[:page]).per Settings.per_page
   end
 
   def new

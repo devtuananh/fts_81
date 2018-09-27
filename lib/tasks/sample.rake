@@ -2,23 +2,23 @@ namespace :sample_data do
   task create: :environment do
     puts "Create Users"
     User.bulk_insert do |user|
-      supervisor = 0
-      trainee = 1
+      supervisor = 1
+      trainee = 0
       password = "123456"
-      20.times do
+      20.times do |i|
         user.add(
           name: Faker::Name.name,
-          email: Faker::Internet.email,
+          email: "admin_#{i}@email.com",
           phone: Faker::PhoneNumber.phone_number.gsub(/\s/, ""),
           address: Faker::Address.street_address,
           role: supervisor,
           password: password,
           encrypted_password: BCrypt::Password.create(password))
       end
-      20.times do
+      20.times do |j|
         user.add(
           name: Faker::Name.name,
-          email: Faker::Internet.email,
+          email: "user_#{j}@email.com",
           phone: Faker::PhoneNumber.phone_number.gsub(/\s/, ""),
           address: Faker::Address.street_address,
           role: trainee,
@@ -42,29 +42,9 @@ namespace :sample_data do
     UserCourse.bulk_insert do |user_course|
       Course.all.each do |course|
         user_course.add(
-          user_id: rand(21..40),
-          course_id: course.id,
-          status: 0)
-      end
-    end
-
-    puts "Create trainee course"
-    UserCourse.bulk_insert do |user_course|
-      Course.all.each do |course|
-        user_course.add(
           user_id: rand(1..20),
           course_id: course.id,
-          status: 1)
-      end
-    end
-
-    puts "Create trainee 1 course"
-    UserCourse.bulk_insert do |user_course|
-      Course.all.each do |course|
-        user_course.add(
-          user_id: 1,
-          course_id: course.id,
-          status: 1)
+          status: 0)
       end
     end
 

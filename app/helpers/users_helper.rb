@@ -1,8 +1,8 @@
 module UsersHelper
-  def get_user id
+  def find_user id
     @user = User.find_by_id id
 
-    return if @user
+    return @user if @user
     flash[:danger] = t ".not_found"
     redirect_to root_path
   end

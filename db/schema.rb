@@ -65,16 +65,22 @@ ActiveRecord::Schema.define(version: 2018_09_16_164141) do
 
   create_table "trainee_subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "subject_id"
+    t.bigint "trainee_id"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_trainee_subjects_on_subject_id"
+    t.index ["trainee_id"], name: "index_trainee_subjects_on_trainee_id"
   end
 
   create_table "trainee_tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "task_id"
+    t.bigint "trainee_id"
+    t.integer "status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["task_id"], name: "index_trainee_tasks_on_task_id"
+    t.index ["trainee_id"], name: "index_trainee_tasks_on_trainee_id"
   end
 
   create_table "user_courses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -109,7 +115,9 @@ ActiveRecord::Schema.define(version: 2018_09_16_164141) do
   add_foreign_key "trainee_reports", "reports"
   add_foreign_key "trainee_reports", "users", column: "receiver_id"
   add_foreign_key "trainee_subjects", "subjects"
+  add_foreign_key "trainee_subjects", "users", column: "trainee_id"
   add_foreign_key "trainee_tasks", "tasks"
+  add_foreign_key "trainee_tasks", "users", column: "trainee_id"
   add_foreign_key "user_courses", "courses"
   add_foreign_key "user_courses", "users"
 end
