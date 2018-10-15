@@ -1,5 +1,16 @@
 # This is rubocop configuration file for Framgia's coding style. Enabling and disabling is configured
 # in separate files. This file adds all other parameters apart from Enabled.
+require: rubocop-rspec
+
+AllCops:
+  RSpec:
+    Patterns:
+    - _test.rb
+    - "(?:^|/)test/"
+
+  RSpec/FactoryBot:
+    Patterns:
+    - test/factories/**/*.rb
 
 # Put the following files into the same directory as this file.
 inherit_from:

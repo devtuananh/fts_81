@@ -28,6 +28,7 @@ gem "rails", "~> 5.2.0"
 gem "rails-i18n"
 gem "rolify"
 gem "rubocop", "~> 0.54.0", require: false
+gem "rubocop-rspec"
 gem "sass-rails", "~> 5.0"
 gem "sidekiq"
 gem "uglifier", ">= 1.3.0"
@@ -35,7 +36,9 @@ gem "validates_timeliness", "~> 5.0.0.alpha3"
 gem "whenever", :require => false
 
 group :development, :test do
+  gem "factory_bot_rails", require: false
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "rspec-rails", "~> 3.6"
 end
 
 group :development do
@@ -55,6 +58,7 @@ group :test do
   gem "capybara", ">= 2.15", "< 4.0"
   gem "chromedriver-helper"
   gem "selenium-webdriver"
+  gem "shoulda-matchers", "~> 3.1"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
